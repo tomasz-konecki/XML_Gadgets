@@ -39,19 +39,24 @@
       margin: auto;
       font-size: 1.1em;
     }
+    p {
+      font-size: 10px;
+      color: #57677c;
+    }
   </style>
 
 </head>
 
 <body>
-  <h3>Icons</h3>
   <div class="icon-container" id="quote">
     <i class="fa fa-quote-right"></i>
   </div>
-
   <div class="icon-container" id="ellipse">
     <i class="fa fa-ellipsis-h"></i>
   </div>
+
+<p>https://github.com/tomasz-konecki/XML_Gadgets/edit/master/icons.xml</p>
+
 </body>
 
 </html>
