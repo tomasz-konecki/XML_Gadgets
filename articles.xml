@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="Dynamic Height"
+    height="250">
+    <Require feature="dynamic-height"/>
+  </ModulePrefs>
+  <Content type="html">
+  <![CDATA[
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Gadget Collapse</title>
+
+    <style>
+      .main-container {
+        width: 70%;
+      }
+
+      .content-container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      img {
+        margin-right: 20px;
+      }
+
+      #articles-container-two {
+        display: none;
+      }
+
+      input {
+        margin-top: 20px;
+        float: right;
+        background: rgb(197, 234, 247);
+        border: none;
+        padding: 5px 10px;
+      }
+      input:hover {
+        cursor: pointer;
+      }
+    </style>
+ 
+
+    <div class="main-container">
+      <div class="articles-container" id="articles-container-one"></div>
+
+      <div class="articles-container" id="articles-container-two"></div>
+      <input
+        type="button"
+        onclick="toggleVisibility()"
+        value=""
+        id="change-view-btn"
+      />
+    </div>
+    <script>
+      const content =
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur luctus porttitor quam sit amet commodo. Phasellus ac laoreet augue. Aliquam aliquam dolor vel vehicula pellentesque. Mauris dapibus ac elit at elementum. Maecenas tortor lacus, malesuada quis nisl eu, fringilla placerat odio. Morbi venenatis enim urna, porttitor tincidunt dolor suscipit vel. Donec vel erat posuere, ultrices turpis at, bibendum lectus. Donec lectus nisi, mattis a libero vel, vestibulum feugiat nisi. Etiam laoreet lacus nunc, et pharetra libero molestie tincidunt. Fusce pellentesque quam id lectus accumsan venenatis.";
+
+      const articles = [
+        {
+          title: "Article 1",
+          picture: "https://via.placeholder.com/150x150",
+          content
+        },
+        {
+          title: "Article 2",
+          picture: "https://via.placeholder.com/150x150",
+          content
+        },
+        {
+          title: "Article 3",
+          picture: "https://via.placeholder.com/150x150",
+          content
+        },
+        {
+          title: "Article 4",
+          picture: "https://via.placeholder.com/150x150",
+          content
+        },
+        {
+          title: "Article 5",
+          picture: "https://via.placeholder.com/150x150",
+          content
+        },
+        {
+          title: "Article 6",
+          picture: "https://via.placeholder.com/150x150",
+          content
+        }
+      ];
+
+      const btn = document.getElementById("change-view-btn");
+      btn.value = "Show more";
+
+      const displayArticles = (first, last, id) => {
+        let wholeArticle = document.createDocumentFragment();
+        let articleFragment = document.createDocumentFragment();
+
+        articles.map((article, index) => {
+          if (index >= first && index < last) {
+            let articleTitle = document.createElement("h2");
+            articleTitle.innerText = article.title;
+
+            let articleContainer = document.createElement("div");
+            articleContainer.classList.add("content-container");
+
+            let articlePicture = document.createElement("img");
+            articlePicture.setAttribute("src", article.picture);
+
+            let articleContent = document.createElement("p");
+            articleContent.innerText = article.content;
+
+            let contentContainer = articleFragment.appendChild(
+              articleContainer
+            );
+
+            contentContainer.appendChild(articlePicture);
+            contentContainer.appendChild(articleContent);
+
+            wholeArticle.appendChild(articleTitle);
+            wholeArticle.appendChild(contentContainer);
+          }
+
+          gadgets.window.adjustHeight();
+        });
+
+        document
+          .getElementById("articles-container-" + id)
+          .appendChild(wholeArticle);
+      };
+
+      const toggleVisibility = () => {
+        let containerTwo = document.getElementById("articles-container-two");
+
+        window.getComputedStyle(containerTwo).display === "block"
+          ? ((containerTwo.style.display = "none"), (btn.value = "Show more"))
+          : ((containerTwo.style.display = "block"), (btn.value = "Show less"));
+      };
+
+      displayArticles(0, 2, "one");
+      displayArticles(2, 6, "two");
+    </script>
+ 
+  ]]>
+  </Content>
+</Module>
