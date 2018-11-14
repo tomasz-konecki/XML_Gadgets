@@ -3,10 +3,7 @@
     <ModulePrefs title="Menu"  view="configuration" preferred_height="300"/>
     <Content type="html">
      <![CDATA[
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -52,9 +49,7 @@
     }
   </style>
 
-</head>
 
-<body>
   <div class="icon-container" id="quote">
     <i class="fa fa-quote-right"></i>
   </div>
@@ -63,10 +58,6 @@
   </div>
 
 <a href="https://github.com/tomasz-konecki/XML_Gadgets/edit/master/icons.xml" target="blank">https://github.com/tomasz-konecki/XML_Gadgets/edit/master/icons.xml</a>
-
-</body>
-
-</html>
 
 ]]>
     </Content> 
