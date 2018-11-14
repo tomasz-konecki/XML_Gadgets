@@ -17,7 +17,7 @@
     body {
       background-color: #20262E;
     }
-
+  
     .icon-container {
       width: 44px;
       height: 44px;
@@ -55,7 +55,7 @@
     <i class="fa fa-ellipsis-h"></i>
   </div>
 
-<p>https://github.com/tomasz-konecki/XML_Gadgets/edit/master/icons.xml</p>
+<a href="https://github.com/tomasz-konecki/XML_Gadgets/edit/master/icons.xml" target="blank">https://github.com/tomasz-konecki/XML_Gadgets/edit/master/icons.xml</a>
 
 </body>
 
