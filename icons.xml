@@ -43,6 +43,12 @@
       font-size: 10px;
       color: #57677c;
     }
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      cursor: pointer;
+    }
   </style>
 
 </head>
