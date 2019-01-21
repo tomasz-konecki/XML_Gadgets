@@ -23,8 +23,11 @@
 
     <script>
         var site = document.referrer;
+        var location = window.location;
 
         console.log("This is test gadget...", site);
+        console.log("document.referrer:", site);
+        console.log("window.location:", location);
     </script>
   ]]>
   </Content>
